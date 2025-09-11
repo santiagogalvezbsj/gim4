@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+ <head>
+  <font face="Arial">
+    
+   <title>Clientes UniFit</title>
+    <meta charset="UTF-8">
+   <style>
+   
+
+     button {
+  background-color: #c4c2c2; 
+  color: rgb(0, 0, 0);              
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  align-items: center;
+}
+
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+ </style>
+  
+
+</head>
+<body>
+  <h1>Clientes UniFit</h1>
+  <table id="clientesTabla">
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Número de teléfono</th>
+      <th>Plan</th>
+    </tr>
+  </table>
+
+  <br>
+  <button><a href="./menuAgregarCliente.html">Agregar cliente</a></button>
+
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+      const tabla = document.getElementById("clientesTabla");
+
+      clientes.forEach(c => {
+        const fila = tabla.insertRow();
+        fila.insertCell(0).innerText = c.nombre;
+        fila.insertCell(1).innerText = c.apellido;
+        fila.insertCell(2).innerText = c.edad;
+        fila.insertCell(3).innerText = c.telefono;
+        fila.insertCell(4).innerText = c.plan;
+      });
+    });
+  </script>
+  </font>
+</body>
+</html>
