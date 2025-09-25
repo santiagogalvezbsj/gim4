@@ -4,7 +4,7 @@
 
     class Clientes extends Model{
         protected $table = 'clientes';
-        protected $primaryKey = 'idcliente';
+        protected $primaryKey = 'id_cliente';
         protected $allowedFields = ['id_cliente','nombres','apellidos', 'edad','teléfono','id_plan'];
     }
 ?>

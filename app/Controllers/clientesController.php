@@ -1,92 +1,61 @@
 <?php
     namespace App\Controllers;
 
-use App\Models\Ciudadanos;
+use App\Models\Clientes;
 use CodeIgniter\Controller;
 
-    class ControladorCiudadanos extends BaseController{
-        public function verCiudadanos(){
-            $db = \Config\Database::connect();
-            $builder = $db->table('ciudadanos');
-            $builder->select('ciudadanos.*, municipios.nombre as nombre_municipio, nivelesacademicos.nombre as nombre_nivel_acad');
-            $builder->join('municipios', 'municipios.cod_muni = ciudadanos.lugar_nacimiento', 'left');
-            $builder->join('nivelesacademicos', 'nivelesacademicos.cod_nivel_acad = ciudadanos.cod_nivel_acad', 'left');
-            $query = $builder->get();
-            $datosBD['datosBD'] = $query->getResultArray();
-            return view('ciudadanos',$datosBD);
+    class clientesController extends BaseController{
+        
+        public function verClientes(){
+            $cliente = new Clientes();
+            $datosBD['datosBD'] = $cliente->findAll();
+            return view('menuClientes',$datosBD);
         }
 
-        public function guardarCiudadano(){
-            $dpi = $this->request->getVar('txt_codigo');
-            $apellido = $this->request->getVar('txt_apellido');
-            $nombre = $this->request->getVar('txt_nombre');
-            $direccion = $this->request->getVar('txt_direccion');
-            $telCasa = $this->request->getVar('txt_tel_casa');
-            $telCelular = $this->request->getVar('txt_tel_movil');
-            $email = $this->request->getVar('txt_email');
-            $fechaNac = $this->request->getVar('txt_fechanac');
-            $nivelAcad = $this->request->getVar('txt_cod_nivel_acad');
-            $municipio = $this->request->getVar('txt_cod_muni');
-            $pass = $this->request->getVar('txt_contra');
-    
-            $ciudadano = new Ciudadanos();
-            $datos=['dpi'=>$dpi,
-                    'apellido'=>$apellido,
-                    'nombre'=>$nombre,
-                    'direccion'=>$direccion,
-                    'tel_casa'=>$telCasa,
-                    'tel_movil'=>$telCelular,
-                    'email'=>$email,
-                    'fechanac'=>$fechaNac,
-                    'cod_nivel_acad'=>$nivelAcad,
-                    'cod_muni'=>$municipio,
-                    'contra'=>$pass
-                    ];
-            $ciudadano->insert($datos);
-            return $this->verCiudadanos();
+
+         public function guardarCliente(){
+                    $id_cliente = $this->request->getVar('txt_id_cliente');
+                    $nombre = $this->request->getVar('txt_nombre');
+                    $telefono = $this->request->getVar('txt_telefono');
+                    $correo = $this->request->getVar('txt_correo');
+        
+                   $cliente = new Clientes();
+                    $datos=['id_cliente'=>$id_cliente,    
+                            'nombre'=>$nombre,
+                            'telefono'=>$telefono,
+                            'correo'=>$correo
+                            ];              
+                    $cliente->insert($datos);
+                    return $this->verClientes();
+                    }
+
+        public function eliminarCliente($id_cliente=null){
+            $cliente = new Clientes();
+            $cliente->delete($id_cliente);
+            return $this->verClientes();
         }
-    
-        public function eliminarCiudadano($dpi=null){
-            $ciudadano = new Ciudadanos();
-            $ciudadano->delete($dpi);
-            return $this->verCiudadanos();
-        }
-    
-        public function localizarCiudadano($dpi=null){  
-            $ciudadano = new Ciudadanos();
-            $datosCiudadano['datosCiudadano']=$ciudadano->where('dpi',$dpi)->first();
-            return view('frm_actualizarCiudadano',$datosCiudadano);  
-        }
-    
-        public function modificarCiudadano(){
-            $dpi = $this->request->getVar('txt_codigo');
-            $apellido = $this->request->getVar('txt_apellido');
-            $nombre = $this->request->getVar('txt_nombre');
-            $direccion = $this->request->getVar('txt_direccion');
-            $telCasa = $this->request->getVar('txt_tel_casa');
-            $telCelular = $this->request->getVar('txt_tel_movil');
-            $email = $this->request->getVar('txt_email');
-            $fechaNac = $this->request->getVar('txt_fechanac');
-            $nivelAcad = $this->request->getVar('txt_cod_nivel_acad');
-            $municipio = $this->request->getVar('txt_cod_muni');
-            $pass = $this->request->getVar('txt_contra');
-    
-            $ciudadano = new Ciudadanos();
-            $datos=['dpi'=>$dpi,
-                    'apellido'=>$apellido,
-                    'nombre'=>$nombre,
-                    'direccion'=>$direccion,
-                    'tel_casa'=>$telCasa,
-                    'tel_movil'=>$telCelular,
-                    'email'=>$email,
-                    'fechanac'=>$fechaNac,
-                    'cod_nivel_acad'=>$nivelAcad,
-                    'cod_muni'=>$municipio,
-                    'contra'=>$pass
-                    ];
-    
-    
-            $ciudadano->update($dpi,$datos);
-            return $this->verCiudadanos();
-        }
+
+        public function localizarCliente($id_cliente=null){  
+            $cliente = new Clientes(); 
+             $datosCleinte['datosCliente']=$producto->where('id_cliente',$id_cliente)->first();
+            return view('frm_actualizarCliente',$datosCliente);  
+        }     
+
+
+
+        public function modificarCliente(){
+                    $id_cliente = $this->request->getVar('txt_id_cliente');
+                    $nombre = $this->request->getVar('txt_nombre');
+                    $telefono = $this->request->getVar('txt_telefono');
+                    $correo = $this->request->getVar('txt_correo');
+        
+                   $cliente = new Clientes();
+                    $datos=['id_cliente'=>$id_cliente,    
+                            'nombre'=>$nombre,
+                            'telefono'=>$telefono,
+                            'correo'=>$correo
+                            ];              
+                    $cliente->update($id_cliente,$datos);
+                    return $this->verClientes();
+                    }
     }
