@@ -32,7 +32,7 @@ use CodeIgniter\Controller;
                 }
 
     
-        public funtion eliminarVenta($id_venta=null){
+        public function eliminarVentas($id_venta=null){
             $venta = new Ventas();
             $venta->delete($id_venta);
             return $this->verVentas();

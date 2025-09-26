@@ -6,12 +6,12 @@ use CodeIgniter\Controller;
 
     class clientesController extends BaseController{
         
-        public function verClientes(){
-            $cliente = new Clientes();
-            $datosBD['datosBD'] = $cliente->findAll();
-            return view('menuClientes',$datosBD);
-        }
-
+        public function verClientes()
+{
+    $model = new ClientesModel();
+    $data['clientes'] = $model->findAll();
+    return view('clientesVista', $data);
+}
 
          public function guardarCliente(){
                     $id_cliente = $this->request->getVar('txt_id_cliente');
@@ -37,7 +37,7 @@ use CodeIgniter\Controller;
 
         public function localizarCliente($id_cliente=null){  
             $cliente = new Clientes(); 
-             $datosCleinte['datosCliente']=$producto->where('id_cliente',$id_cliente)->first();
+             $datosCliente['datosCliente']=$cliente->where('id_cliente',$id_cliente)->first();
             return view('frm_actualizarCliente',$datosCliente);  
         }     
 
