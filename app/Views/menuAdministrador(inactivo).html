@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Unifit - Dashboard</title>
+ 
+   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee&family=Story+Script&am… rel="stylesheet">
+ 
+    <style>
+    
+ 
+    #preloader img {
+     width: 250px; 
+     animation: zoom 1.5s ease-in-out infinite; 
+    }
+
+ 
+    @keyframes zoom {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+ 
+ 
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      font-family: 'Archivo Black', Arial; 
+    }
+
+ 
+    .sidebars-container {
+     display: flex;
+     flex-direction: column; 
+     margin-top: auto; 
+    }
+
+ 
+   .sidebar {
+      width: 200px;                 
+      height: 70px;                
+      padding: 25px;
+      border-radius: 0 25px 25px 0;
+      text-align: center;
+      align-self: flex-end;       
+    }
+
+   
+    .sidebar2 {
+     width: 200px;                 
+     height: 550px;                
+     background-color: rgb(228, 226, 226);
+     padding: 25px;
+     border-radius: 0 25px 25px 0;
+     text-align: center;
+     align-self: flex-end;       
+    }
+
+ 
+    h1 {
+      font-family: 'Bungee', sans-serif;
+      margin: 0 0 5px 0; 
+      margin-top: -10px;
+    }
+
+ 
+    p {
+      font-family: 'Story Script', cursive;
+      margin: 0 0 15px 5px; 
+      margin-top: -10px; 
+    }
+
+ 
+    .sidebar2 ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; 
+    }
+
+ 
+    .sidebar2 li {
+      margin: 20px 0;
+      font-size: 18px;
+      cursor: pointer;
+ 
+    }
+
+ 
+    .sidebar2 ul {
+      margin-top: 40px;
+    }
+ 
+
+    .main {
+     padding: 250px;
+     width: 550px;   
+     height: 900px;  
+     font-family: 'Archivo Black', sans-serif; 
+     font-size: 30px;   
+     color: #333;      
+     text-align: center;
+    }
+
+ 
+    .sidebar h1,
+    .sidebar p {
+     text-align: center;
+    }
+ 
+
+    .sidebar2 ul li button {
+     width: 100%;          
+     padding: 10px 0;      
+     font-size: 16px;
+     cursor: pointer;
+     border: none;           
+     border-radius: 8px;    
+     background-color: #c4c2c2;
+     color: rgb(49, 49, 49);         
+     transition: 0.3s;       
+     font-family: 'Archivo Black', sans-serif;
+    }
+ 
+
+    .sidebar2 ul li button:hover {
+     background-color: #a5a5a5;
+    }
+ 
+ 
+   .sidebar3 {
+     width: 200px;                 
+     height: 700px;               
+     padding: 25px;
+     border-radius: 0 25px 25px 0;
+     text-align: center;
+     align-self: flex-end;
+    }
+
+ 
+   .sidebar3 h2 button {
+     width: 100%;           
+     padding: 10px 0;       
+     font-size: 16px;
+     cursor: pointer;
+     border: none;           
+     border-radius: 8px;     
+     background-color: #c4c2c2; 
+     color: rgb(49, 49, 49);          
+     transition: 0.3s;       
+     font-family: "Archivo Black", sans-serif;
+    }
+
+ 
+    .sidebar3 h2 button:hover{
+     background-color: #6b6b6b;
+    }
+
+ 
+    .sidebar img {
+     width: 50px; 
+     margin-top: -20px;
+    }
+
+ 
+   #preloader {
+     display: none; 
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: white;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+    }
+ 
+ 
+  </style>
+</head>
+
+
+<body>
+  <div id="preloader">
+   <img src="img/img/logo.png" alt="Cargando..."> 
+  </div>
+ 
+  <div class="sidebars-container">
+   <div class="sidebar">
+     <img src="img/img/logo.png">
+     <h1>UniFit</h1>
+     <p>¡Donde nada es imposible!</p>
+   </div>
+
+   <div class="sidebar2">
+    <ul>
+       <li><button onclick="location.href='menuPlanes.html'">Planes</button></li>
+       <li><button onclick="location.href='menuProductos.html'">Productos </button></li>
+       <li><button onclick="location.href='menuServicios.html'">Servicios</button></li>
+       <li><button onclick="location.href='menuClientes.html'">Clientes</button></li>
+    </ul>
+  </div>
+ </div>
+ 
+ <div class="main">
+   Selecciona una de las opciones de la izquierda
+ </div>
+ 
+ <div class="sidebar3">
+   <h2><button>Notificaciones </button></h2>
+ </div>
+ 
+ <script>
+   const navEntries = performance.getEntriesByType("navigation");
+   const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
+ 
+   window.addEventListener("load", function() {
+   const preloader = document.getElementById("preloader");
+ 
+    if (isReload) {
+     
+      setTimeout(function() {
+        preloader.style.transition = "opacity 1s";
+        preloader.style.opacity = "0";
+        setTimeout(() => preloader.style.display = "none", 1000);
+      }, 1150); 
+    } else {
+    
+      preloader.style.display = "none";
+    }
+ 
+   if (performance.navigation.type === 1) { // 1 = recarga
+     const preloader = document.getElementById("preloader");
+     preloader.style.display = "flex";
+ 
+     setTimeout(function(){
+        preloader.style.transition = "opacity 1s";
+        preloader.style.opacity = 0;
+        setTimeout(function(){
+            preloader.style.display = "none";
+        }, 1000);
+    }, 2000);
+   }
+   });
+
+ </script>
+</body>
+</html>
