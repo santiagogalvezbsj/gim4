@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE php_check_syntax>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
