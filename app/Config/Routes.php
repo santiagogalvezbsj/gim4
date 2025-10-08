@@ -54,4 +54,5 @@ $routes->get('/productos', 'productosController::verProductos');
 $routes->post('/guardarProducto', 'productosController::guardarProducto');
 $routes->get('/eliminarProducto/(:num)', 'productosController::eliminarProducto/$1');
 $routes->get('/localizarProducto/(:num)', 'productosController::localizarProducto/$1');
-$routes->post('/modificarProducto', 'productosController::modificarProducto');  
+$routes->post('/modificarProducto', 'productosController::modificarProducto');
+$routes->get('agregar_clientes', 'Agregar_clientes::index');
