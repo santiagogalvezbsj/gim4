@@ -70,6 +70,8 @@ margin: 10px 0;
       margin-top: 70px;
       font-size: 30px;
     }
+
+
   </style>
 </head>
 <body>
@@ -82,8 +84,8 @@ margin: 10px 0;
 
   <div class="menu">
    
-    <button> <a href="./menuClientes.html">Clientes</a></button>
-    <button><a href="./menuProductos.html" >Productos</a></button>
+    <button><a href='9MenuClientes.html'>Clientes</a></button>
+    <button><a href="ZmenuProductos(inactivo).html">Productos</a></button>
   </div>
 
 

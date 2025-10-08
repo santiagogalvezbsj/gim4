@@ -55,16 +55,16 @@
             <tr>
                 <td valign="top">
                     <ul>
-                    <p>Proteína Whey, Q. 500.00: <span class="stock">10</span> disponibles.</p>
-                    <p>Proteína ISO, Q. 750.00: <span class="stock">6</span> disponibles.</p>
-                    <p>Creatina Monohidratada, Q. 300.00: <span class="stock">15</span> disponibles.</p>
-                    <p>Preentreno PSYCOTHIC, Q. 520.00: <span class="stock">4</span> disponibles.</p>
+                    <p>Proteína Whey, Q. 500.00: <span class="stock">20</span> disponibles.</p>
+                    <p>Proteína ISO, Q. 750.00: <span class="stock">20</span> disponibles.</p>
+                    <p>Creatina Monohidratada, Q. 300.00: <span class="stock">20</span> disponibles.</p>
+                    <p>Preentreno PSYCOTHIC, Q. 520.00: <span class="stock">20</span> disponibles.</p>
                     <p>Camisa con LOGO, Q. 100.00: <span class="stock">20</span> disponibles.</p>
-                    <p>Pachón con LOGO, Q. 60.00: <span class="stock">222</span> disponibles.</p>
+                    <p>Pachón con LOGO, Q. 60.00: <span class="stock">20</span> disponibles.</p>
                     </ul>
                 </td>
                 <td valign="top">
-                    <p>Total de stock disponible: <span id="total">277 productos.</span></p>
+                    <p>Total de stock disponible: <span id="total">120 productos.</span></p>
                     <div id="boton">
                         <button onclick="modificarStock()">Modificar Stock</button>
                     </div>

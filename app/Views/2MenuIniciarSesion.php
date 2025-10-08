@@ -227,7 +227,7 @@
 
     if(found) {
       alert("¡Inicio de sesión correcto; Bienvenido, administrador! :)")
-      window.location.href = "menuVendedor.html";
+      window.location.href = "7MenuVendedor.html";
     } else {
       alert("Credenciales incorrectas, intenta de nuevo");
     }

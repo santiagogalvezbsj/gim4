@@ -28,7 +28,7 @@
     Teléfono: <input type="text" id="telefono" required><br><br>
     Plan: 
     <select id="plan">
-      <option value="Mensual">Menusal</option>
+      <option value="Mensual">Mensual</option>
       <option value="Anual">Anual</option>
       <option value="UniFit Mensual">UniFit Mensual</option>
       <option value="UniFit Anual">UniFit Anual</option>

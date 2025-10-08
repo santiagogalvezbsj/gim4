@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Unifit - Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 <style>
 
   * {
@@ -16,10 +16,10 @@
 
   body {
       font-family: "IBM Plex Sans", sans-serif;
-      display: flex;          /* 🔹 necesario */
-      flex-direction: column; /* de arriba hacia abajo */
-      align-items: center;    /* centra horizontalmente */
-      justify-content: flex-start; /* comienza desde arriba */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       min-height: 100vh;
       background: #dbd4d4;
       color: #333;
@@ -42,12 +42,120 @@
   }
 
 
+  .button1-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+  .button2-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+  .button3-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+  .button4-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+  .button5-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
+  .button6-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+
   body.loaded .message-container,
   body.loaded .scroll-bar,
   body.loaded .buttons-container,
   body.loaded .buttons-container2 {
     opacity: 1;
     transform: translateY(0);
+  }
+
+
+  body.loaded .button1-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  body.loaded .button2-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  body.loaded .button3-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  body.loaded .button4-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  body.loaded .button5-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  body.loaded .button6-animation {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+  .button1-animation {
+    transition-delay: 0.4s;
+  }
+
+
+  .button2-animation {
+    transition-delay: 0.6s;
+  }
+
+
+  .button3-animation {
+    transition-delay: 0.8s;
+  }
+
+
+  .button4-animation {
+    transition-delay: 1s;
+  }
+
+
+  .button5-animation {
+    transition-delay: 1.2s;
+  }
+
+
+  .button6-animation {
+    transition-delay: 1.4s;
   }
 
 
@@ -84,8 +192,7 @@
     padding: 0 20px;
     color: rgb(255, 255, 255);
     z-index: 1000;
-    
-  }
+    }
 
 
   header img {
@@ -99,12 +206,12 @@
     font-size: 10px;
     margin: -12px 0 0 -10px ;
     color: black;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Lato", sans-serif;
   }
 
 
   header  h2 {
-    font-size: 15;
+    font-size: 15px;
   }
 
 
@@ -211,7 +318,7 @@
 
   .principal-container {
     width: 100%;
-    height: 600px;
+    height: 220px;
     background-color: #25293d;
     border-radius: 15px;
     flex-direction: column;
@@ -222,10 +329,13 @@
   .buttons-container {
     margin: 20px auto;
     padding: 50px;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     gap: 60px;
+    margin-top: -100px;
+    margin-bottom: 0;
+    margin-bottom: 30px;
   }
 
 
@@ -237,6 +347,67 @@
     display: flex;
     justify-content: center;
     gap: 60px;
+    margin-bottom: 100px;
+  }
+
+
+  .button1-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
+  }
+
+
+  .button2-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
+  }
+
+
+  .button3-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
+  }
+
+
+  .button4-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
+  }
+
+
+  .button5-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
+  }
+
+
+  .button6-animation {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    justify-content: center;
+    height: 300px;
   }
 
 
@@ -254,7 +425,8 @@
     border-bottom-right-radius: 40px;/* esquina inferior derecha */
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;   
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 400px;
   }
 
 
@@ -272,6 +444,7 @@
     border-bottom-right-radius: 40px;/* esquina inferior derecha */
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
+    height: 400px;
   }
 
 
@@ -289,6 +462,7 @@
     border-bottom-right-radius: 40px;/* esquina inferior derecha */
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
+    height: 400px;
   }
 
 
@@ -307,6 +481,7 @@
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
     transition: transform 0.3s, box-shadow 0.3s;   
+    height: 400px;
   }
 
 
@@ -325,6 +500,7 @@
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
     transition: transform 0.3s, box-shadow 0.3s;   
+    height: 400px;
   }
 
 
@@ -343,42 +519,101 @@
     border-bottom-left-radius: 10px; /* esquina inferior izquierda */
     margin: 20px;
     transition: transform 0.3s, box-shadow 0.3s;   
+    height: 400px;
   }
 
 
   .button1 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: -10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+  }
+
+
+  .button1 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
 
   .button2 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: -10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+
+  .button2 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 20px;
   }
 
 
   .button3 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+  }
+  
+
+  .button3 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
 
   .button4 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+  }
+
+
+  .button4 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
 
   .button5 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+  }
+
+
+  .button5 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 50px;
+    margin-top: -50px;
   }
 
 
   .button6 h1 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 25px;
+  }
+
+
+  .button6 h2 {
+    font-size: 20px;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-bottom: 50px;
+    margin-top: -50px;
   }
 
 
@@ -471,15 +706,26 @@
   }
 
 
+  .message-container {
+    flex: 1;
+    text-align: left;   /* 🔹 texto alineado a la izquierda */
+    margin: 0;
+    color: white;
+    margin-left: 60px;
+    margin-bottom: 100px;
+  }
+
+
   .message-container h1 {
     font-family: "Bungee", sans-serif;
     margin-top: -10px;
+    font-size: 35px;
   }
 
 
   .message-container h2 {
     font-size: 20px;
-    margin-top: 10px;
+    font-size: 18px;
   }
 
 
@@ -526,8 +772,7 @@
   /*Cambio de fondo en "focus" por botón*/
 
 
-  .buttons-container button {
-    width: 100%;
+  .buttons-container button { 
     max-width: 350px;
     position: relative;
     overflow: hidden;
@@ -536,7 +781,6 @@
 
 
   .buttons-container2 button {
-    width: 100%;
     max-width: 350px;
     position: relative;
     overflow: hidden;
@@ -583,6 +827,17 @@
   /*Carrusel*/
 
 
+  .welcome-carousel {
+    display: flex;
+    justify-content: space-between; /* separa izquierda/derecha */
+    align-items: center;            /* centra verticalmente */
+    gap: 40px;                      /* espacio entre texto y carrusel */
+    width: 90%;                     /* ancho del contenedor */
+    margin: 0 auto;                 /* centra el bloque en la página */
+    margin-top: 10  px;
+  }
+
+
   .carousel {
     position: relative;
     width: 350px;         
@@ -599,6 +854,14 @@
     align-items: center;
   }
 
+
+  .carousel {
+    flex: 1;
+    max-width: 400px;  /* 🔹 tamaño controlado */
+    margin: 0;         /* quitamos auto-centro */
+    margin-right: 60px;
+    margin-top: -130px;
+  }
 
   .carousel-item.active {
     opacity: 1;
@@ -652,6 +915,138 @@
   }
 
 
+  footer {
+    width: 100%;
+    background: linear-gradient(90deg, #404354, #c8c8c8);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 14px;
+    margin-top: auto; /* 🔹 hace que quede pegado abajo */
+    border-top: 2px solid #2a2d3a;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+
+
+  .button1 ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+
+
+  .button2 ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+
+
+  .button3 ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    margin-left: 30px;
+    margin-top: 25px;
+  }
+
+
+  .button1 h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    text-align: left;
+    display: list-item;
+    margin-bottom: 5px;
+  }
+
+
+  .button2 h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    text-align: left;
+    display: list-item;
+    margin-bottom: 5px;
+  }
+
+
+  .button3 h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    text-align: left;
+    display: list-item;
+    margin-bottom: 5px;
+  }
+
+
+  .button3 h4 {
+    margin-top: -15px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+
+  .button1 img {
+    width: 100px;
+    height: 170px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+
+  .button2 img {
+    width: 180px;
+    height: 190px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+  .button3 img {
+    width: 170px;
+    height: 170px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+  .button4 img {
+    width: 170px;
+    height: 170px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+  .button5 img {
+    width: 170px;
+    height: 260px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+
+  .button6 img {
+    width: 80px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
+
   </style>
 </head>
 
@@ -667,61 +1062,81 @@
     <nav>
        <ul>
 
+        <li class="register-text" onclick="location.href='3MenuPrincipal.html'"> Inicio </li>
+
         <li class="register-text" onclick="More()">Sobre nosotros</li>
 
         <li class="register-text" onclick="Noti()">Notificaciones</li>
 
-      
-        <li>Clientes</li>
        </ul>
       </nav>
   </header>
   <div class="principal-container">
-    <div class="message-container">
-      <h1>¡Bienvenido, usuario!</h1>
-      <div class="saludo">
-        <h2>¿Qué te gustaría hacer el día de hoy?</h2>
-      </div>
+<div class="welcome-carousel">
+  <div class="message-container">
+    <h1>Productos disponibles</h1>
+    <div class="saludo">
+      <h2>En nuestras sedes</h2>
     </div>
-    <div class="carousel">
-      <div class="carousel-item active">¡Varias opciones creadas para tí!</div>
-      <div class="carousel-item">Tip: Duerme más de 5 horas</div>
-      <div class="carousel-item">Descubre el origen de nuestra idea</div>
-      <div class="carousel-item">¡Revisa los planes que te esperan!</div>
-      <div class="carousel-item">¡Pasa menos tiempo en TikTok!</div>
-      <div class="carousel-item">Planea un estilo de vida saludable</div>
-      <div class="carousel-item">La constancia es la clave</div>
-      <div class="carousel-item">¡Hola, mundo!</div>
-    </div>
+  </div>
+  
+
+</div>
+
 
     <div class="buttons-container">
-      <button class="button1" onclick="location.href='menuPlanes.html'">
-        <h1>¿No sabes cómo empezar?</h1>
-        <h2>¡Revisa nuestros planes disponibles!</h2>
-      </button>
-      <button class="button2" onclick="location.href='menuProductos.html'">
-        <h1>¿Buscas algo en particular?</h1>
-        <h2>¡Revisa nuestros productos en venta!</h2>
-      </button>
-      <button class="button3" onclick="location.href='menuServicios.html'">
-        <h1>¿Buscas empezar una nueva rutina?</h1>
-        <h2>¡Revisa nuestros servicios actuales!</h2>
+      <div class="button1-animation">
+        <button class="button1" onclick="Venta()">
+          <h1>Proteína Whey</h1>
+          <img src="img/img/proteinawhey.png">
+          <h2>Q 500.00</h2>
+        </button>
+      </div>
+      <div class="button2-animation">
+        <button class="button2" onclick="Venta()">
+          <h1>Proteína ISO</h1>
+          <img src="img/img/proteinaiso.png">
+          <h2>Q 750.00</h2>
+        </button>
+      </div>
+    <div class="button3-animation">
+      <button class="button3"  onclick="Venta()">
+          <h1>Creatina Monohidratada</h1>
+          <img src="img/img/creatina.png">
+          <h2>Q 300.00</h2>
       </button>
     </div>
-          <div class="buttons-container2">
-        <button class="button4" onclick="Acerca()">
-          <h1>¿Quieres estar al tanto de todo?</h1>
-          <h2>¡Descubre la información más reciente sobre UNIFIT!</h2>
-        </button>
-        <button class="button5" onclick="Noti()">
-          <h1>¿Buscas nueva actividad?</h1>
-          <h2>¡Encuentra eventos recientes organizados por nosotros!</h2>
-        </button>
-        <button class="button6" onclick="Acerca()">
-          <h1>¿Quieres llevar una vida más saludable?</h1>
-          <h2>¡Lee sobre hábitos recomendados para incluir en tu día a día!</h2>
-        </button>
-  </div>
+    </div>
+
+    <div class="buttons-container2">
+      <div class="button4-animation">
+          <button class="button4"  onclick="Venta()">
+            <h1>Preentreno Psychotic</h1>
+            <img src="img/img/pre.png">
+            <h2>Q 520.00</h2>
+          </button>
+        </div>
+        <div class="button5-animation">
+          <button class="button5"  onclick="Venta()">
+            <h1>Camisa con logo</h1>
+            <img src="img/img/camisa.png">
+            <h2>Q 100.00</h2>
+          </button>
+        </div>
+        <div class="button6-animation">
+          <button class="button6"  onclick="Venta()">
+            <h1>Pachón con logo</h1>
+            <img src="img/img/pachon.png">
+            <h2>Q 60.00</h2>
+          </button>
+        </div>
+      </div>
+
+  <footer>
+    <p>© 2025 UNIFIT. Todos los derechos reservados.</p>
+
+  </footer>
+
 
   <script>
   const scrollBar = document.querySelector('.scroll-bar');
@@ -776,6 +1191,12 @@
   function Acerca() {
     alert("Por ahora, esta sección no está disponible :D")
   }
+</script>
+
+<script>
+    function Venta() {
+        alert("Existencias disponibles: 20\nPuedes conseguirlo en cualquiera de nuestras dos sedes")
+    }
 </script>
 
   
